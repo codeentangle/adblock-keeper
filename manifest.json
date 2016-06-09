@@ -1,0 +1,32 @@
+{
+	"manifest_version": 2,
+	"name": "Adblock Keeper",
+	"description": "This extension tries to iron out adblock crippled experience on jyllands-posten.dk, politiken.dk & ekstrabladet.dk",
+	"version": "0.4",
+	"icons": { 
+        "128": "ui/icon128.png"
+    },
+
+	"content_scripts": [
+		{
+			"matches": ["http://ekstrabladet.dk/*", "http://jyllands-posten.dk/*", "http://politiken.dk/*"],
+			"js": ["js/vendor/jquery-2.2.1.min.js"],
+			"run_at": "document_end"
+		},
+		{
+			"matches": ["http://ekstrabladet.dk/*"],
+			"js": ["js/eb.js"],
+			"run_at": "document_end"
+		},
+		{
+			"matches": ["http://jyllands-posten.dk/*"],
+			"js": ["js/jp.js"],
+			"run_at": "document_end"
+		},
+		{
+			"matches": ["http://politiken.dk/*"],
+			"js": ["js/pk.js"],
+			"run_at": "document_end"
+		}
+	]
+}
