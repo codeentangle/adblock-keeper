@@ -12,5 +12,4 @@ $(document).ready(function() {
     *   Remove overlay
     */
     $(".modal-adblockblocker__content").parents('div').remove();
-    console.log('init');
 });
